@@ -1,12 +1,8 @@
-import { Request, Response, NextFunction } from "express";
-import { getTax } from "./congestionTaxCalculator";
-import Vehicle from "../../vehicle";
+import { Request, Response, NextFunction } from 'express';
+import { getTax } from './congestionTaxCalculator';
+import Vehicle from '../../vehicle';
 
-const congestionTaxCalculatorContoller = async (
-  req: Request,
-  res: Response,
-  next: NextFunction,
-) => {
+const congestionTaxCalculatorContoller = async (req: Request, res: Response, next: NextFunction) => {
   const vehicle = req.body?.vehicle;
   const dates = req.body?.dates;
   console.log(vehicle, dates);
@@ -14,40 +10,38 @@ const congestionTaxCalculatorContoller = async (
 
   const dummy: Vehicle = {
     getVehicleType: () => {
-      return "adasda";
+      return 'adasda';
     },
   };
   const DatesTest = [
-    "2013-01-14 21:00:00",
-    "2013-01-15 21:00:00",
-    "2013-02-07 06:23:27", // 8
-    "2013-02-07 15:27:00", // 13
-    "2013-02-07 15:40:00", // 18
-    "2013-02-08 06:27:00", // 8
-    "2013-02-08 06:20:27", // 8
-    "2013-02-08 14:35:00", // 8
-    "2013-02-08 15:29:00", // 13
-    "2013-02-08 15:47:00", // 18
-    "2013-02-08 16:01:00", // 18
-    "2013-02-08 16:48:00", // 18
-    "2013-02-08 17:49:00", // 13
-    "2013-02-08 18:29:00", // 8
-    "2013-02-08 18:35:00",
-    "2013-03-26 14:25:00",
-    "2013-03-28 14:07:27",
+    '2013-01-14 21:00:00',
+    '2013-01-15 21:00:00',
+    '2013-02-07 06:23:27', // 8
+    '2013-02-07 15:27:00', // 13
+    '2013-02-07 15:40:00', // 18
+    '2013-02-08 06:27:00', // 8
+    '2013-02-08 06:20:27', // 8
+    '2013-02-08 14:35:00', // 8
+    '2013-02-08 15:29:00', // 13
+    '2013-02-08 15:47:00', // 18
+    '2013-02-08 16:01:00', // 18
+    '2013-02-08 16:48:00', // 18
+    '2013-02-08 17:49:00', // 13
+    '2013-02-08 18:29:00', // 8
+    '2013-02-08 18:35:00',
+    '2013-03-26 14:25:00',
+    '2013-03-28 14:07:27',
   ];
 
-  const sortedDates = DatesTest.map((date) => new Date(date)).sort((a, b) =>
-    new Date(a) > new Date(b) ? 1 : -1,
-  );
-  console.log("sortedDates ???????????????????????????????", sortedDates);
+  const sortedDates = DatesTest.map((date) => new Date(date)).sort((a, b) => (new Date(a) > new Date(b) ? 1 : -1));
+  console.log('sortedDates ???????????????????????????????', sortedDates);
 
   const totalFee = getTax(
     dummy,
     DatesTest.map((date) => new Date(date)),
   );
-  console.log("totalFee", totalFee);
-  return res.send({ totalFee, currency: "SEK" });
+  console.log('totalFee', totalFee);
+  return res.send({ totalFee, currency: 'SEK' });
 };
 
 export default congestionTaxCalculatorContoller;
