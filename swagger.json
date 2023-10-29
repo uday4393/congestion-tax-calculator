@@ -1,0 +1,68 @@
+{
+
+    "swagger": "2.0",
+    "info": {
+        "description": "Congestion Tax Calculator in Gothenburg",
+        "version": "1.0.0",
+        "title": "Congestion Tax Calculator API",
+        "contact": {
+            "email": "uday.mydam@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "schemes": ["http"],
+    "host": "localhost:3000",
+    "basePath": "/api",
+    "paths" : {
+        "/congestion-tax-calculator" : {
+            "get" : {
+                "summary" : "calculates congestion tax for a given period of time",
+                "description": "calculates congestion tax for a given period of time",
+                "produces": ["application/json"],
+                
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                                "$ref": "#/definitions/taxCalculatorResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid status value",
+                        "schema": {
+                            "$ref": "#/definitions/InvalidResponse"
+                        }
+                    }
+                }
+            }
+        }
+    }, 
+    "definitions": {
+        "taxCalculatorResponse": {
+            "type": "object",
+            "properties": {
+                "totalFee": {
+                    "type": "integer"
+                },
+                "currecy": {
+                    "type": "string"
+                }
+            }
+        },
+        "InvalidResponse": {
+            "type": "object",
+            "properties": {
+                "statusCode": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+
+        }
+    }
+}
