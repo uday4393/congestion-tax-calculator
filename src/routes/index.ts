@@ -2,7 +2,7 @@ import express from 'express';
 import swaggerUi = require('swagger-ui-express');
 
 import fs = require('fs');
-import congestionTaxCalculatorContoller from '../controllers/congestionTaxCalculator.controller';
+import congestionTaxCalculatorContoller from '../congestion-tax-calculator/congestionTaxCalculator.controller';
 
 /* Swagger files start */
 const swaggerFile: any = process.cwd() + '/swagger.json';
@@ -19,6 +19,6 @@ router.get('/', (req, res) => {
 router.use('/api/docs', swaggerUi.serve);
 router.get('/api/docs', swaggerUi.setup(swaggerDocument));
 
-router.get('/api/congestion-tax-calculator', congestionTaxCalculatorContoller);
+router.post('/api/congestion-tax-calculator', congestionTaxCalculatorContoller);
 
 export default router;

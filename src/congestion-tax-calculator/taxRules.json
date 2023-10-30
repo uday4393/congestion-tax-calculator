@@ -1,0 +1,50 @@
+{
+    "city": "Gothenburg",
+    "rules": [
+        {
+            "start_time": "06:00:00",
+            "end_time": "06:29:59",
+            "amount": 8
+        },
+        {
+            "start_time": "06:30:00",
+            "end_time": "06:59:59",
+            "amount": 13
+        },
+        {
+            "start_time": "07:00:00",
+            "end_time": "07:59:59",
+            "amount": 18
+        },
+        {
+            "start_time": "08:00:00",
+            "end_time": "08:29:59",
+            "amount": 13
+        },
+        {
+            "start_time": "08:30:00",
+            "end_time": "14:59:59",
+            "amount": 8
+        },
+        {
+            "start_time": "15:00:00",
+            "end_time": "15:29:59",
+            "amount": 13
+        },
+        {
+            "start_time": "15:30:00",
+            "end_time": "16:59:59",
+            "amount": 18
+        },
+        {
+            "start_time": "17:00:00",
+            "end_time": "17:59:59",
+            "amount": 13
+        },
+        {
+            "start_time": "18:00:00",
+            "end_time": "18:29:59",
+            "amount": 8
+        }
+    ]
+}
