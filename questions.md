@@ -62,3 +62,10 @@ The specific improvements to be made depend on the use case, requirements, and c
 11. **Logging and Auditing:** Is there logging and auditing in place to track tax calculations and any exceptions that might occur?
 
 12. **Testing:** What kind of testing, including unit tests, integration tests, and system tests, has been conducted to ensure the correctness of the system?
+
+
+# Submission Screenshots
+
+![Screenshot of Swagger](https://github.com/uday4393/congestion-tax-calculator/raw/main/screenshots/swagger.png)
+
+![Screenshot of Response](https://github.com/uday4393/congestion-tax-calculator/raw/main/screenshots/response.png)
