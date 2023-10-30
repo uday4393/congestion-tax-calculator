@@ -12,3 +12,7 @@ Clone this repository to get started. Due to a number of reasons, not least priv
 ![Screenshot of Swagger](https://github.com/uday4393/congestion-tax-calculator/raw/main/screenshots/swagger.png)
 
 ![Screenshot of Response](https://github.com/uday4393/congestion-tax-calculator/raw/main/screenshots/response.png)
+
+# Run Instructions
+**yarn install** to add node modules
+**yarn run dev** to run application locally
